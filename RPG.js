@@ -48,29 +48,36 @@
 
 
 //this is the Start of Arsalon's Obstacle OOP ///
-
-
-
-
-function Obstacle(){
-    Obstacle.prototype.attackPlayer = function(player){
-        return this.playerHealth;
-    };
-    
-    function DepleteHealth(player){
-        this.reduceHealth = function(){ var health = player.health - 5; return this.health; }
-    };
-    DepleteHealth.prototype = new Obstacle();
-
-
-var monster = Object.create(Obstacle);
-var Assassin = Object.create(Ob)
-
-Monster.prototype.AttactPlayer = function (player){
-    player.healthPoints = +-10;
-    return player;
+function Obstacle (player){
+    this.player = player;
+}
+Obstacle.prototype.depleteHealth = function(player){
+    player.health -= 5;
+    return this.player;
+}
+Obstacle.prototype.giveGold = function(player){
+    player.gold += 1;
+    return this.player;
 }
 
+function Monstor(){
+    Monstor.prototype = object.create(Obstacle.prototype);
+}
+Monstor.prototype.depleteHealth -=10;
+Monstor.prototype.giveGold += 0; 
+
+function Assassin(){
+    Assassin.prototype = object.create(Obstacle.prototype);
+}
+Assassin.prototype.depleteHealth -=5;
+Assassin.prototype.giveGold += 0; 
+
+
+function Wizard(){
+    Wizard.prototype = object.create(Obstacle.prototype);
+}
+Wizard.prototype.depleteHealth =0;
+Wizard.prototype.giveGold += 10; 
 
 
 
@@ -78,15 +85,3 @@ Monster.prototype.AttactPlayer = function (player){
 
 
 
-
-
-
-
-
-
-
-
-
-Monster.constructor;
-Assassin.constructor;
-QuickSand.constructor;
