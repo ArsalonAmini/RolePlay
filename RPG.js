@@ -1,5 +1,5 @@
 //this is the start of our group project//
-function player(name,weapon){
+function Player(){
 	this.name = name;
 	this.gold = 0 ;
 	this.health = 100;
@@ -14,21 +14,41 @@ player.prototype.addGold = function(amount){
 player.prototype.depleteHealth=function(amount){
 	this.health -= amount;
 }
+function Alien(){
+	this.weapon = laser;
+		};
+Alien.prototype = new Player();
+function Ninja (){
+	this.weapon = NunChucks;
+		};
+Ninja.prototype = new Player();
 
-function initiate(){
-var alien = new player("Alien");
-alien.weapon = "Laser Pistol";
-var ninja = new player("Ninja");
-ninja.weapon = "Nunchucks";
-var cowboy = new player("Cowboy");
-cowboy.weapon = "Rifle";
+function Cowboy (){
+	this.weapon = pistol;
+		};
+	Cowboy.prototype = new Player();
 
- alien.addGold(10);
- alien.depleteHealth(2);
- console.log(alien);
+alien.addGold(10);
+alien.depleteHealth(2);
+console.log(alien);
 alien.depleteHealth;
 
 
+function chooseAlien(){
+	var alien = new Alien();
+	startGame(alien);
 }
-initiate();
+
+function chooseCowBoy(){
+	var cowBoy = new Cowboy();
+}
+
+function  chooseNinja(){
+	var ninja = new Ninja();
+}
+
+function startGame(player){
+alert(monster);
+
+
 
