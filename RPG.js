@@ -8,32 +8,27 @@ function player(name,weapon){
 player.prototype.getName = function(){
 	return this.name;
 }
-
-player.prototype.getTransport=function(name){
-		if(player.name = name){
-			this.gold += gold;
-			this.health -= health;
-		}
-		return this.gold,this.health;
+player.prototype.addGold = function(amount){
+	this.gold += amount;
 }
-player.prototype.useWeapon=function(){
-
-}
-player.prototype.useProtectSelf= function(){
-
+player.prototype.depleteHealth=function(amount){
+	this.health -= amount;
 }
 
 function initiate(){
-var alien = Object.create(player);
+var alien = new player("Alien");
 alien.weapon = "Laser Pistol";
-var ninja = Object.create(player);
+var ninja = new player("Ninja");
 ninja.weapon = "Nunchucks";
-var cowboy = Object.create(player);
+var cowboy = new player("Cowboy");
 cowboy.weapon = "Rifle";
-alien.getTransport;
+
+ alien.addGold(10);
+ alien.depleteHealth(2);
+ console.log(alien);
+alien.depleteHealth;
+
 
 }
 initiate();
-
-
 
