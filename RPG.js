@@ -1,6 +1,6 @@
 //this is the start of our group project//
 
-function Player(){
+function player(){
 	this.name = name;
 	this.gold = 0;
 	this.health = 100;
