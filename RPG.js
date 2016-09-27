@@ -1,6 +1,6 @@
 //this is the start of our group project//
 
-function Player(){1
+function player(){1
 	this.name = name;
 	this.gold = 0;
 	this.health = 100;
@@ -16,101 +16,77 @@ player.prototype.getName = function(){
 player.prototype.depleteHealth=function(amount){
 	this.health -= amount;
 }
+
 function initiate(){
+document.getElementById("firstChallenge").style.visibility = "hidden";
 characters.prototype = new player();
-var alien = new characters();
-alien.name="Alien";
-alien.weapon="Laser Pistol";
-alien.addGold(10);
-alien.depleteHealth(2);
-var ninja = new characters();
-ninja.name = "Ninja";
-ninja.weapon = "Nunchucks";
-ninja.addGold(20);
-ninja.depleteHealth(5);
-var cowboy = new characters();
-cowboy.name = "Cowboy";
-cowboy.weapon = "Rifle";
-cowboy.addGold(5);
-cowboy.depleteHealth(5);
-console.log(alien);
-console.log(ninja);
-console.log(cowboy);
+choosePlayer();
+
+
 //alien.depleteHealth;
 
 }
+function chooseAlien(){
+	var alien = new characters();
+		alien.name="Alien";
+		alien.weapon="Laser Pistol";
+		runGame("Alien");
+	}
+function chooseNinja(){
+	var ninja = new characters();
+		ninja.name = "Ninja";
+		ninja.weapon = "Nunchucks";
+		runGame("Ninja");
+}	
+function chooseCowBoy(){
+	var cowboy = new characters();
+		cowboy.name = "Cowboy";
+		cowboy.weapon = "Rifle";
+		runGame("Cowboy");
+}
+
+
+
 function choosePlayer(name){
 	if(name == "Alien")
 	{
-		alien.addGold(10);
+		
+
 
 	}
 	if(name == "Ninja")
 	{
-		ninja.addGold(10);
+		
 	}
 	if(name == "Cowboy")
 	{
-		cowboy.addGold(10);
-		alert(gold);
+		
+		cowboy.weapon = "Rifle";
 	}
 	
 }
 function runGame(name){
 	switch(name){
 		case "Alien":
-			answer="";
+			displayFirstChallenge();
 			break;
 		case "Ninja":
-			answer="";
+			displayFirstChallenge();
 			break;
 		case "Cowboy":
-			answer="";
+			displayFirstChallenge();
 			break;
 	}
-	return answer;
+	
 }
-function print(){
-	var msg ="hello";
-	return msg;
-	//document.getElementById("message").innerHtml = "hello";
+
+
+function displayFirstChallenge(){
+	 document.getElementById("firstChallenge").style.visibility = "visible";
+	 document.getElementById("opening").style.visibility = "hidden";
 }
 
 initiate();
-function Alien(){
-	this.weapon = laser;
-		};
-Alien.prototype = new Player();
-function Ninja (){
-	this.weapon = NunChucks;
-		};
-Ninja.prototype = new Player();
 
-function Cowboy (){
-	this.weapon = pistol;
-		};
-	Cowboy.prototype = new Player();
-
-alien.addGold(10);
-alien.depleteHealth(2);
-console.log(alien);
-alien.depleteHealth;
-
-
-function chooseAlien(){
-	var alien = new Alien();
-	startGame(alien);
-}
-
-function chooseCowBoy(){
-	var cowBoy = new Cowboy();
-}
-
-function  chooseNinja(){
-	var ninja = new Ninja();
-}
-
-function startGame(player){
-alert(monster);
 
 
