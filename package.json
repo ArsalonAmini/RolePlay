@@ -1,0 +1,33 @@
+{
+  "name": "roleplay",
+  "version": "1.0.0",
+  "description": "This is a JavaScript on day project as part of DevCode Camp Week #9 - Three partners are working together Hillary, Magalakshmi, Arsalon",
+  "main": "RPG.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArsalonAmini/RolePlay.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArsalonAmini/RolePlay/issues"
+  },
+  "eslintConfig": {
+ "extends": "eslint:recommended",
+ "env": {
+   "browser": true,
+   "es6": true
+ },
+ "parserOptions": {
+   "ecmaVersion": 6,
+   "sourceType": "module"
+ },
+ "rules": {
+   "semi": 2
+ }
+}
+
+}
