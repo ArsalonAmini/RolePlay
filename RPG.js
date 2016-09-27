@@ -1,5 +1,6 @@
 //this is the start of our group project//
-function player(){
+
+function Player(){1
 	this.name = name;
 	this.gold = 0;
 	this.health = 100;
@@ -76,6 +77,40 @@ function print(){
 }
 
 initiate();
+function Alien(){
+	this.weapon = laser;
+		};
+Alien.prototype = new Player();
+function Ninja (){
+	this.weapon = NunChucks;
+		};
+Ninja.prototype = new Player();
+
+function Cowboy (){
+	this.weapon = pistol;
+		};
+	Cowboy.prototype = new Player();
+
+alien.addGold(10);
+alien.depleteHealth(2);
+console.log(alien);
+alien.depleteHealth;
 
 
-//this is the Start of Arsalon's Obstacle OOP ///
+function chooseAlien(){
+	var alien = new Alien();
+	startGame(alien);
+}
+
+function chooseCowBoy(){
+	var cowBoy = new Cowboy();
+}
+
+function  chooseNinja(){
+	var ninja = new Ninja();
+}
+
+function startGame(player){
+alert(monster);
+
+
