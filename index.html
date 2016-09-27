@@ -3,53 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>devCodeCamp &middot; Role Play Game</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   
   </head>
 <body>
-<script>
+<div id="opening">
 	<h1>Introduction:</h1>
 <h4>“Welcome to Javascropolis! </h4>
 “You’ve entered an alternate reality in which all of your choices carry heavy consequences. The once great city of Javascropolis is under siege and only you, magically disguised, can save it. A gang of terrible overlords has taken over and released all of the evil that was once caged in the Dungeon of Errors below the city. The only way to rid Javacropolis of the horrendous gang is to pay them in gold. Fortunately, a troop of Riddling Wizards has come to town. They have no use for gold, but being wizards, they have come across quite a bit of it. If you are able to answer their questions, you will receive the precious gold you need to save the city. You must go about collecting as much as possible, but be careful…..evil is lurking around every corner.”<br>
-<p></p>
+
 <br>
-<a href='linkhref.html' id='mylink'>click me</a>
-<button onClick = choosePlayer>Alien</button>
-<button onclick="print()">Ninja</button>
-<button onclick="choosePlayer(this)">Cowboy</button>
 
-var myLink = document.getElementById('mylink');
+<button onclick="chooseAlien()">Alien</button>
+<button onclick="chooseNinja()">Ninja</button>
+<button onclick="chooseCowBoy()">Cowboy</button>
+</div>
+<div id="firstChallenge">
+<h1> Challenge One</h1>
+<p>“Up ahead of you there appears to be group of huddled people, wide-eyed and frightened. You sneak closer in an attempt to hear what they are saying. Between muffled whispers, you gather that they have spotted a Riddling Wizard down the dark alleyway to your left. After turning down into the alley, you see the wizard seated at the far end. Before you reach him, you hear the lowest of grumbles. Out of the shadows appears the most frightening creature you’ve ever seen. (Need more description) It’s clear, the monster is not going to let you pass. You now have to make a choice…</p>
 
-myLink.onclick = function(){
 
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "Public/Scripts/RPG.js."; 
-    document.getElementsByTagName("head")[0].appendChild(script);
-    return false;
+<button onclick="ChooseRun()">Run</button>
+<button onclick="chooseFight()">Fight</button>
+<button onclick="chooseProtect()">Protect</button></div>
+<script src="RPG.js">
 
-}
-
-  $(document).ready(function(){
-    $('#Alien').click(function(){
-       	return print();
-    });
-  });
-   $("button").click(function(event){
-        $("p").html(event.result);
-    });
-
-$(document).ready(function(){
-    $('#Ninja').click(function(){
-
-       	print();
-    });
-  });
-$(document).ready(function(){
-    $('#Cowboy').click(function(){
-    	choosePlayer();
-    });
-  });
-
-</script src="RPG.js" type="text/javascript" >
+</script>
 </body>
 </html>
