@@ -2,19 +2,24 @@
 
 function player(){
 	this.name = name;
-	this.gold = 0;
-	this.health = 100;
+	var gold = 0;
+	var health = 100;
 	this.addGold = function(amount){
-	this.gold += amount;
-}
+	gold += amount;}
+
+	this.depleteHealth=function(amount){
+		health -= amount;
+	}
+	this.getGold = function(){
+		return gold;
+	}
+	this.getHealth = function(){
+		return health;
+	}
+
 }
 
-player.prototype.getName = function(){
-	return this.name;
-}
-player.prototype.depleteHealth=function(amount){
-	this.health -= amount;
-}
+
 
 function Alien (){
 	this.name = "Alien";
@@ -76,8 +81,12 @@ function runGame(name){
 	}
 }
 
-function checkLifeStatus(){
-
+function checkIfAlive(){
+	this.isAlive = true
+		if (person.getHealth() <= 0){
+			this.isAlive = false;
+		}
+	return this.isAlive;
 }
 
 function chooseChallenge(type, challenge){
@@ -139,10 +148,17 @@ function chooseRunOne(){
 	}
 	document.getElementById("firstUpdate").style.display = "block";
 	document.getElementById("firstChallenge").style.display = "none";
-	document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.gold;
-	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.health;
+	document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.getGold();
+	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.getHealth();
+	checkIfAlive();
 }
 
+function getDeath(){
+	if (checkIfAlive == false)
+	{
+		document.
+	}
+}
 
 
 
@@ -169,8 +185,8 @@ function chooseRunTwo(){
 	}
 	document.getElementById("secondUpdate").style.display = "block";
 	document.getElementById("secondChallenge").style.display = "none";
-	document.getElementById("goldUpdate2").innerHTML = "Total Gold Earned : " + person.gold;
-	document.getElementById("healthUpdate2").innerHTML = "Total Health points : " + person.health;
+	document.getElementById("goldUpdate2").innerHTML = "Total Gold Earned : " + person.getGold();
+	document.getElementById("healthUpdate2").innerHTML = "Total Health points : " + person.getHealth();
 }
 
 
@@ -199,8 +215,8 @@ function chooseRunThree(){
 	}
 	document.getElementById("thirdUpdate").style.display = "block";
 	document.getElementById("thirdChallenge").style.display = "none";
-	document.getElementById("goldUpdate3").innerHTML = "Total Gold Earned : " + person.gold;
-	document.getElementById("healthUpdate3").innerHTML = "Total Health points : " + person.health;
+	document.getElementById("goldUpdate3").innerHTML = "Total Gold Earned : " + person.getGold();
+	document.getElementById("healthUpdate3").innerHTML = "Total Health points : " + person.getHealth();
 }
 
 
@@ -231,8 +247,8 @@ function chooseFightOne(){
 	}
 	document.getElementById("firstUpdate").style.display = "block";
 	document.getElementById("firstChallenge").style.display = "none";
-	document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.gold;
-	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.health;
+	document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.getGold();
+	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.getHealth();
 }
 
 
@@ -262,8 +278,8 @@ function chooseFightTwo(){
 	}
 	document.getElementById("secondUpdate").style.display = "block";
 	document.getElementById("secondChallenge").style.display = "none";
-	document.getElementById("goldUpdate2").innerHTML = "Total Gold Earned : " + person.gold;
-	document.getElementById("healthUpdate2").innerHTML = "Total Health points : " + person.health;
+	document.getElementById("goldUpdate2").innerHTML = "Total Gold Earned : " + person.getGold();
+	document.getElementById("healthUpdate2").innerHTML = "Total Health points : " + person.getHealth();
 }
 
 
@@ -296,8 +312,8 @@ function chooseFightThree(){
 	}
 	document.getElementById("thirdUpdate").style.display = "block";
 	document.getElementById("thirdChallenge").style.display = "none";
-	document.getElementById("goldUpdate3").innerHTML = "Total Gold Earned : " + person.gold;
-	document.getElementById("healthUpdate3").innerHTML = "Total Health points : " + person.health;
+	document.getElementById("goldUpdate3").innerHTML = "Total Gold Earned : " + person.getGold();
+	document.getElementById("healthUpdate3").innerHTML = "Total Health points : " + person.getHealth();
 }
 
 
@@ -327,8 +343,8 @@ function chooseProtectOne(){
 	}
 	document.getElementById("firstUpdate").style.display = "block";
 	document.getElementById("firstChallenge").style.display = "none";
-	document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.gold;
-	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.health;
+	document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.getGold();
+	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.getHealth();
 }
 
 
@@ -354,8 +370,8 @@ function chooseProtectTwo(){
 	}
 	document.getElementById("secondUpdate").style.display = "block";
 	document.getElementById("secondChallenge").style.display = "none";
-	document.getElementById("goldUpdate2").innerHTML = "Total Gold Earned : " + person.gold;
-	document.getElementById("healthUpdate2").innerHTML = "Total Health points : " + person.health;
+	document.getElementById("goldUpdate2").innerHTML = "Total Gold Earned : " + person.getGold();
+	document.getElementById("healthUpdate2").innerHTML = "Total Health points : " + person.getHealth();
 }
 
 
@@ -387,8 +403,8 @@ function chooseProtectThree(){
 	}
 	document.getElementById("thirdUpdate").style.display = "block";
 	document.getElementById("thirdChallenge").style.display = "none";
-	document.getElementById("goldUpdate3").innerHTML = "Total Gold Earned : " + person.gold;
-	document.getElementById("healthUpdate3").innerHTML = "Total Health points : " + person.health;
+	document.getElementById("goldUpdate3").innerHTML = "Total Gold Earned : " + person.getGold();
+	document.getElementById("healthUpdate3").innerHTML = "Total Health points : " + person.getHealth();
 }
 
 
