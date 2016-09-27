@@ -19,8 +19,6 @@ function player(){
 
 }
 
-
-
 function Alien (){
 	this.name = "Alien";
 	this.weapon="Laser Pistol";
@@ -34,8 +32,13 @@ function Cowboy(){
 	this.weapon = "Rifle";
 }
 
+function AddSuffix(){
+	person.name = "Mr."+ person.name;
+}
 
 var person;
+
+
 
 
 function initiate(){
@@ -51,19 +54,18 @@ document.getElementById("thirdUpdate").style.display = "none";
 function chooseAlien(){
 	Alien.prototype = new player();
 	person = new Alien();
-
+	AddSuffix.apply(person);
 		runGame("Alien");
 	}
 function chooseNinja(){
 	Ninja.prototype = new player();
 	person = new Ninja();
-
+	AddSuffix.call(person);
 		runGame("Ninja");
 }
 function chooseCowboy(){
 	Cowboy.prototype = new player();
 	person = new Cowboy();
-
 		runGame("Cowboy");
 }
 
@@ -152,16 +154,6 @@ function chooseRunOne(){
 	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.getHealth();
 	checkIfAlive();
 }
-
-function getDeath(){
-	if (checkIfAlive == false)
-	{
-		document.
-	}
-}
-
-
-
 
 
 function chooseRunTwo(){
