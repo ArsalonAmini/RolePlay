@@ -10,10 +10,26 @@
     "type": "git",
     "url": "git+https://github.com/ArsalonAmini/RolePlay.git"
   },
-  "author": "Hilary",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ArsalonAmini/RolePlay/issues"
   },
-  "homepage": "https://github.com/ArsalonAmini/RolePlay#readme"
+
+  "eslintConfig": {
+ "extends": "eslint:recommended",
+ "env": {
+   "browser": true,
+   "es6": true
+ },
+ "parserOptions": {
+   "ecmaVersion": 6,
+   "sourceType": "module"
+ },
+ "rules": {
+   "semi": 2
+ }
+}
+
+
 }
