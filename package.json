@@ -15,7 +15,6 @@
   "bugs": {
     "url": "https://github.com/ArsalonAmini/RolePlay/issues"
   },
-
   "eslintConfig": {
  "extends": "eslint:recommended",
  "env": {
@@ -31,5 +30,8 @@
  }
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 0a66a561e1ecb43ff1887a6d9ccf871dfbcf6c6a
 }
