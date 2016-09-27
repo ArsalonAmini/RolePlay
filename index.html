@@ -10,7 +10,6 @@
 	<h1>Introduction:</h1>
 <h4>“Welcome to Javascropolis! </h4>
 “You’ve entered an alternate reality in which all of your choices carry heavy consequences. The once great city of Javascropolis is under siege and only you, magically disguised, can save it. A gang of terrible overlords has taken over and released all of the evil that was once caged in the Dungeon of Errors below the city. The only way to rid Javacropolis of the horrendous gang is to pay them in gold. Fortunately, a troop of Riddling Wizards has come to town. They have no use for gold, but being wizards, they have come across quite a bit of it. If you are able to answer their questions, you will receive the precious gold you need to save the city. You must go about collecting as much as possible, but be careful…..evil is lurking around every corner.”<br>
-
 <br>
 
 <button onclick="chooseAlien()">Alien</button>
@@ -20,11 +19,51 @@
 <div id="firstChallenge">
 <h1> Challenge One</h1>
 <p>“Up ahead of you there appears to be group of huddled people, wide-eyed and frightened. You sneak closer in an attempt to hear what they are saying. Between muffled whispers, you gather that they have spotted a Riddling Wizard down the dark alleyway to your left. After turning down into the alley, you see the wizard seated at the far end. Before you reach him, you hear the lowest of grumbles. Out of the shadows appears the most frightening creature you’ve ever seen. (Need more description) It’s clear, the monster is not going to let you pass. You now have to make a choice…</p>
+<button onclick="chooseChallenge('run', 'one')">Run</button>
+<button onclick="chooseChallenge('fight', 'one')">Fight</button>
+<button onclick="chooseChallenge('protect', 'one')">Protect</button></div>
+<div id="firstUpdate">
+<p id ="run"></p>
+<p id ="fight"></p>
+<p id ="protect"></p>
+<p id ="goldUpdate"></p>
+<p id ="healthUpdate"> </p>
+<button onclick="displaySecondChallenge()">Move On</button>
+</div>
+<div id="secondChallenge">
 
-
-<button onclick="ChooseRun()">Run</button>
-<button onclick="chooseFight()">Fight</button>
-<button onclick="chooseProtect()">Protect</button></div>
+<h1> Challenge Two</h1>
+<p>“You got to the Wizard and answered his riddle! No time to celebrate, the city still needs your help. You move on, looking for the next clue. 
+    The only exit from the alley that wouldn’t bring you back to the monster is a doorway into what appears to be an abandoned building. You enter cautiously. As you creep through the alternating shadows and beams of sunlight, you hear a faint crunch of a step on the balcony opposite you. You see him just in time. It’s an assassin!
+</p>
+<button onclick="chooseChallenge('run', 'two')">Run</button>
+<button onclick="chooseChallenge('fight', 'two')">Fight</button>
+<button onclick="chooseChallenge('protect', 'two')">Protect</button>
+</div>
+<div id="secondUpdate">
+<p id ="run2"></p>
+<p id ="fight2"></p>
+<p id ="protect2"></p>
+<p id ="goldUpdate2"></p>
+<p id ="healthUpdate2"> </p>
+<button onclick="displayThirdChallenge()">Move On</button>
+</div>
+<div id="thirdChallenge">
+<h1> Challenge Three</h1>
+<p>“You got passed the assassin and gained gold in the process. No time to celebrate, the city still needs your help. You move on, looking for the next clue. “
+    The counsel tells you there are unseen horrors lurking outside the city walls. You are informed that for the city to truly be safe, someone must stop the caravans from disappearing outside the city walls. The only exit from the city is a stretch of desert. Can you handle the heat? You can! deciding that the heat is a mere trivial annoyance in comparison to the glory earned by saving your city.  You enter cautiously. As you creep through the sand you hear a whistling sound and a hawk screaming faintly from a distance. As you progress into the ominous scenario your foot gets stuck. Oh no, its quicksand! Act swiftly or join the bones of merchants and caravans alike.
+</p>
+<button onclick="chooseChallenge('run', 'three')">Run</button>
+<button onclick="chooseChallenge('fight', 'three')">Fight</button>
+<button onclick="chooseChallenge('protect', 'three')">Protect</button>
+</div>
+<div id="thirdUpdate">
+<p id ="run3"></p>
+<p id ="fight3"></p>
+<p id ="protect3"></p>
+<p id ="goldUpdate3"></p>
+<p id ="healthUpdate3"> </p>
+</div>
 <script src="RPG.js">
 
 </script>
