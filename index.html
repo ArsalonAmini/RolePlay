@@ -3,8 +3,53 @@
   <head>
     <meta charset="utf-8">
     <title>devCodeCamp &middot; Role Play Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </head>
 <body>
-    <script src="RPG.js"></script>
+	<h1>Introduction:</h1>
+<h4>“Welcome to Javascropolis! </h4>
+“You’ve entered an alternate reality in which all of your choices carry heavy consequences. The once great city of Javascropolis is under siege and only you, magically disguised, can save it. A gang of terrible overlords has taken over and released all of the evil that was once caged in the Dungeon of Errors below the city. The only way to rid Javacropolis of the horrendous gang is to pay them in gold. Fortunately, a troop of Riddling Wizards has come to town. They have no use for gold, but being wizards, they have come across quite a bit of it. If you are able to answer their questions, you will receive the precious gold you need to save the city. You must go about collecting as much as possible, but be careful…..evil is lurking around every corner.”<br>
+<p>event.result</p>
+<br>
+<a href='linkhref.html' id='mylink'>click me</a>
+<button>Alien event.result</button>
+<button onclick="print()">Ninja</button>
+<button onclick="choosePlayer(this)">Cowboy</button>
+
+<script src="RPG.js" type="text/javascript">
+var myLink = document.getElementById('mylink');
+
+myLink.onclick = function(){
+
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "Public/Scripts/RPG.js."; 
+    document.getElementsByTagName("head")[0].appendChild(script);
+    return false;
+
+}
+
+  $(document).ready(function(){
+    $('#Alien').click(function(){
+       	return print();
+    });
+  });
+   $("button").click(function(event){
+        $("p").html(event.result);
+    });
+
+$(document).ready(function(){
+    $('#Ninja').click(function(){
+
+       	print();
+    });
+  });
+$(document).ready(function(){
+    $('#Cowboy').click(function(){
+    	choosePlayer();
+    });
+  });
+
+</script>
 </body>
 </html>
