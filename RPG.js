@@ -6,6 +6,7 @@ function player(){
 	var health = 100;
 	this.addGold = function(amount){
 	gold += amount;}
+<<<<<<< HEAD
 	this.depleteHealth = function(amount){
 		health -= amount;}
   this.getGold = function(){
@@ -16,6 +17,21 @@ function player(){
 player.prototype.getName = function(){
 	return this.name;
 }
+=======
+
+	this.depleteHealth=function(amount){
+		health -= amount;
+	}
+	this.getGold = function(){
+		return gold;
+	}
+	this.getHealth = function(){
+		return health;
+	}
+
+}
+
+>>>>>>> ec8a6d8c0a1abf98dc90385e719ad0b6c1ecc23e
 function Alien (){
 	this.name = "Alien";
 	this.weapon="Laser Pistol";
@@ -28,6 +44,14 @@ function Cowboy(){
 	this.name = "Cowboy";
 	this.weapon = "Rifle";
 }
+<<<<<<< HEAD
+=======
+
+function AddSuffix(){
+	person.name = "Mr."+ person.name;
+}
+
+>>>>>>> ec8a6d8c0a1abf98dc90385e719ad0b6c1ecc23e
 var person;
 
 function displayNameFirstChallenge(){
@@ -43,6 +67,12 @@ function displayNameThirdChallenge(){
 	document.getElementById("PrintName2").innerHTML = "Charecter Name :"+ name;
 }
 
+<<<<<<< HEAD
+=======
+
+
+function initiate(){
+>>>>>>> ec8a6d8c0a1abf98dc90385e719ad0b6c1ecc23e
 
 function initiate(){
 document.getElementById("firstChallenge").style.display = "none";
@@ -58,17 +88,31 @@ var challengeThreePersonName;
 function chooseAlien(){
 	Alien.prototype = new player();
 	person = new Alien();
+<<<<<<< HEAD
 	runGame("Alien");
+=======
+	AddSuffix.apply(person);
+		runGame("Alien");
+>>>>>>> ec8a6d8c0a1abf98dc90385e719ad0b6c1ecc23e
 	}
 function chooseNinja(){
 	Ninja.prototype = new player();
 	person = new Ninja();
+<<<<<<< HEAD
 	runGame("Ninja");
+=======
+	AddSuffix.call(person);
+		runGame("Ninja");
+>>>>>>> ec8a6d8c0a1abf98dc90385e719ad0b6c1ecc23e
 }
 function chooseCowboy(){
 	Cowboy.prototype = new player();
 	person = new Cowboy();
+<<<<<<< HEAD
 	runGame("Cowboy");
+=======
+		runGame("Cowboy");
+>>>>>>> ec8a6d8c0a1abf98dc90385e719ad0b6c1ecc23e
 }
 
 function runGame(name){
@@ -88,6 +132,17 @@ function runGame(name){
 	}
 }
 
+<<<<<<< HEAD
+=======
+function checkIfAlive(){
+	this.isAlive = true
+		if (person.getHealth() <= 0){
+			this.isAlive = false;
+		}
+	return this.isAlive;
+}
+
+>>>>>>> ec8a6d8c0a1abf98dc90385e719ad0b6c1ecc23e
 function chooseChallenge(type, challenge){
 	if(challenge == "one"){
 	switch(type){
@@ -146,10 +201,19 @@ function chooseRunOne(){
 	challengOnePersonName();
 	document.getElementById("firstUpdate").style.display = "block";
 	document.getElementById("firstChallenge").style.display = "none";
+<<<<<<< HEAD
   document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.getGold();
 	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.getHealth();
 }
 
+=======
+	document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.getGold();
+	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.getHealth();
+	checkIfAlive();
+}
+
+
+>>>>>>> ec8a6d8c0a1abf98dc90385e719ad0b6c1ecc23e
 function chooseRunTwo(){
 	if(person.name == "Alien"){
 		document.getElementById("run2").innerHTML = "Your spaceship is summoned and you hop in. You are able to buzz around the assassin and out of harm’s way. You move forward without losing health points. You've earned 5 bricks of gold.";
