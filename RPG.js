@@ -58,6 +58,7 @@ document.getElementById("thirdChallenge").style.display = "none";
 document.getElementById("firstUpdate").style.display = "none";
 document.getElementById("secondUpdate").style.display = "none";
 document.getElementById("thirdUpdate").style.display = "none";
+document.getElementById("finalScore").style.display = "none";
 }
 var challengOnePersonName;
 var challengeTwoPersonName;
@@ -75,7 +76,7 @@ function chooseNinja(){
 function chooseCowboy(){
 	Cowboy.prototype = new player();
 	person = new Cowboy();
-	runGame("Cowboy");
+		runGame("Cowboy");
 }
 
 function runGame(name){
@@ -163,8 +164,9 @@ function chooseRunOne(){
 	document.getElementById("firstChallenge").style.display = "none";
   document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.getGold();
 	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.getHealth();
-}
 
+	checkIfAlive();
+}
 
 function chooseRunTwo(){
 	if(person.name == "Alien"){
@@ -179,7 +181,7 @@ function chooseRunTwo(){
 	else if(person.name == "Cowboy"){
 		document.getElementById("run2").innerHTML = "You jump on your horse and attempt to run past the assassin. Low and behold he grabs the helm of your saddle and mounts the horse with you. A standing battle ensues and you try to kick the assassin off your horse with your spurred boots. He evades you and you fall. The fall caused some injuries – lose 40 health points. You've earned 5 bricks of gold.";
 		person.addGold(5);
-		person.depleteHealth(40);
+		person.depleteHealth(100);
 	}
 	challengeTwoPersonName();
 	document.getElementById("secondUpdate").style.display = "block";
@@ -206,9 +208,7 @@ function chooseRunThree(){
 	challengeThreePersonName();
 	document.getElementById("thirdUpdate").style.display = "block";
 	document.getElementById("thirdChallenge").style.display = "none";
-	document.getElementById("goldUpdate3").innerHTML = "Total Gold Earned : " + person.getGold();
-	document.getElementById("healthUpdate3").innerHTML = "Total Health points : " + person.getHealth();
-	
+	displayFinalScore();
 }
 
 function chooseFightOne(){
@@ -273,9 +273,7 @@ function chooseFightThree(){
 	challengeThreePersonName();
 	document.getElementById("thirdUpdate").style.display = "block";
 	document.getElementById("thirdChallenge").style.display = "none";
-	document.getElementById("goldUpdate3").innerHTML = "Total Gold Earned : " + person.getGold();
-	document.getElementById("healthUpdate3").innerHTML = "Total Health points : " + person.getHealth();
-
+	displayFinalScore();
 }
 
 function chooseProtectOne(){
@@ -321,6 +319,7 @@ function chooseProtectTwo(){
 	document.getElementById("secondChallenge").style.display = "none";
 	document.getElementById("goldUpdate2").innerHTML = "Total Gold Earned : " + person.getGold();
 	document.getElementById("healthUpdate2").innerHTML = "Total Health points : " + person.getHealth();
+
 }
 
 function chooseProtectThree(){
@@ -342,8 +341,7 @@ function chooseProtectThree(){
 	challengeThreePersonName();
 	document.getElementById("thirdUpdate").style.display = "block";
 	document.getElementById("thirdChallenge").style.display = "none";
-	document.getElementById("goldUpdate3").innerHTML = "Total Gold Earned : " + person.getGold();
-	document.getElementById("healthUpdate3").innerHTML = "Total Health points : " + person.getHealth();
+	displayFinalScore();
 }
 
 
@@ -351,16 +349,47 @@ function displayFirstChallenge(){
 	document.getElementById("firstChallenge").style.display = "block";
 	document.getElementById("opening").style.display = "none";
 }
+
 function displaySecondChallenge(){
-	document.getElementById("secondChallenge").style.display = "block";
-	document.getElementById("firstChallenge").style.display = "none";
-	document.getElementById("firstUpdate").style.display = "none";
+
+	 document.getElementById("secondChallenge").style.display = "block";
+	 document.getElementById("firstUpdate").style.display = "none";
 }
+
+
 function displayThirdChallenge(){
-	document.getElementById("thirdChallenge").style.display = "block";
-	document.getElementById("secondChallenge").style.display = "none";
-	document.getElementById("secondUpdate").style.display = "none";
+	if (checkIfAlive() == false){
+		document.getElementById("secondUpdate").style.display = "none";
+		document.getElementById("gameOverMessage1").innerHTML = "Oh No!!! You're too injured to save Javascropolis! Game Over";
+		}
+
+	else {
+	 document.getElementById("thirdChallenge").style.display = "block";
+	 document.getElementById("secondUpdate").style.display = "none";
 }
+}
+
+
+
+
+function displayFinalScore(){
+	document.getElementById("thirdChallenge").style.display = "none";
+	document.getElementById("finalScore").style.display = "block";
+	document.getElementById("thanks").innerHTML = "Thanks for playing!!";
+	document.getElementById("health").innerHTML = "Total Health points : " + person.getHealth();
+	document.getElementById("gold").innerHTML = "Total Gold Earned : " + person.getGold();
+	if (checkIfAlive() == false){
+		document.getElementById("gameOverMessage").innerHTML = "Oh No!!! You're too injured to save Javascropolis! Game Over";
+		}
+	else if (person.getGold() >= 15){
+		document.getElementById("goldMessage").innerHTML = "Alas! You've collected " + person.getGold() + " bricks of gold. That will be enough to get the horrible overlords out of the city! You win."
+}
+else {
+	document.getElementById("goldMessage").innerHTML = "Too bad, you needed 15 bricks of gold to satisfy the evil overlords. You ended with " + person.getGold() + "bricks";
+}
+}
+
+
 
 
 initiate();
