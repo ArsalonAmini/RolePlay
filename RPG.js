@@ -1,5 +1,4 @@
 //this is the start of our group project//
-
 function player(){
 	this.name = name;
 	var gold = 0;
@@ -31,13 +30,7 @@ function Cowboy(){
 	this.name = "Cowboy";
 	this.weapon = "Rifle";
 }
-
-function AddSuffix(){
-	person.name = "Mr."+ person.name;
-}
-
 var person;
-
 function displayNameFirstChallenge(){
 	var name = this.name;
 	document.getElementById("PrintName").innerHTML = "Charecter Name :"+ name;
@@ -50,7 +43,6 @@ function displayNameThirdChallenge(){
 	var name = this.name;
 	document.getElementById("PrintName2").innerHTML = "Charecter Name :"+ name;
 }
-
 function initiate(){
 document.getElementById("firstChallenge").style.display = "none";
 document.getElementById("secondChallenge").style.display = "none";
@@ -78,7 +70,6 @@ function chooseCowboy(){
 	person = new Cowboy();
 		runGame("Cowboy");
 }
-
 function runGame(name){
 	challengOnePersonName = displayNameFirstChallenge.bind(person);
 	challengeTwoPersonName=displayNameSecondChallenge.bind(person);
@@ -95,7 +86,6 @@ function runGame(name){
 			break;
 	}
 }
-
 function checkIfAlive(){
 	this.isAlive = true
 		if (person.getHealth() <= 0){
@@ -103,7 +93,6 @@ function checkIfAlive(){
 		}
 	return this.isAlive;
 }
-
 function chooseChallenge(type, challenge){
 	if(challenge == "one"){
 	switch(type){
@@ -141,9 +130,7 @@ function chooseChallenge(type, challenge){
 			chooseProtectThree();
 			break;
 	}}
-
 }
-
 function chooseRunOne(){
 	if(person.name == "Alien"){
 		document.getElementById("run").innerHTML = "Your spaceship is summoned and you hop in. You are able to buzz around the monster and out of harm’s way. You move forward without losing health points. You've earned 5 bricks of gold.";
@@ -164,10 +151,8 @@ function chooseRunOne(){
 	document.getElementById("firstChallenge").style.display = "none";
   document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.getGold();
 	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.getHealth();
-
 	checkIfAlive();
 }
-
 function chooseRunTwo(){
 	if(person.name == "Alien"){
 		document.getElementById("run2").innerHTML = "Your spaceship is summoned and you hop in. You are able to buzz around the assassin and out of harm’s way. You move forward without losing health points. You've earned 5 bricks of gold.";
@@ -189,7 +174,6 @@ function chooseRunTwo(){
 	document.getElementById("goldUpdate2").innerHTML = "Total Gold Earned : " + person.getGold();
 	document.getElementById("healthUpdate2").innerHTML = "Total Health points : " + person.getHealth();
 }
-
 function chooseRunThree(){
 	if(person.name == "Alien"){
 		document.getElementById("run3").innerHTML = "Your spaceship is summoned and you grab hold of corner. The spaceship pulls your leg free and transports you past the quicksand. You move forward without losing health points. You've earned 5 bricks of gold.";
@@ -210,7 +194,6 @@ function chooseRunThree(){
 	document.getElementById("thirdChallenge").style.display = "none";
 	displayFinalScore();
 }
-
 function chooseFightOne(){
 	if(person.name == "Alien"){
 		document.getElementById("fight").innerHTML = "You use the lazer to shoot at the monster. He appears to have skin as tough as a trolls’ and the shots only make small cuts. They do seem to keep him back, and you get past. You've earned 5 bricks of gold.";
@@ -232,7 +215,6 @@ function chooseFightOne(){
 	document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.getGold();
 	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.getHealth();
 }
-
 function chooseFightTwo(){
 	if(person.name == "Alien"){
 		document.getElementById("fight2").innerHTML = "You use the laser to shoot at the assassin. He appears to more clever a troll and uses a reflective mirror to shoot your shots back at you. You are able to keep shooting as you make your way past him but your own shot hits your thigh and you lose 20 health points. You've earned 5 bricks of gold.";
@@ -253,7 +235,6 @@ function chooseFightTwo(){
 	document.getElementById("goldUpdate2").innerHTML = "Total Gold Earned : " + person.getGold();
 	document.getElementById("healthUpdate2").innerHTML = "Total Health points : " + person.getHealth();
 }
-
 function chooseFightThree(){
 	if(person.name == "Alien"){
 		document.getElementById("fight3").innerHTML = "You use the laser to shoot at the quicksand. It swallows your shots and pulls you in deeper.  You lose 20 health points.  You've earned 5 bricks of gold.";
@@ -275,7 +256,6 @@ function chooseFightThree(){
 	document.getElementById("thirdChallenge").style.display = "none";
 	displayFinalScore();
 }
-
 function chooseProtectOne(){
 	if(person.name == "Alien"){
 		document.getElementById("protect").innerHTML = "You scrunch up your face and focus all of your brain power on creating a force-field. Aha! You’ve done it…the force field appears around you. You’ve got to use all of your focus and strength for the entire walk around the monster as he beats on the force field. This tires you out – lose 20 health points. You've earned 5 bricks of gold.";
@@ -297,7 +277,6 @@ function chooseProtectOne(){
 	document.getElementById("goldUpdate").innerHTML = "Total Gold Earned : " + person.getGold();
 	document.getElementById("healthUpdate").innerHTML = "Total Health points : " + person.getHealth();
 }
-
 function chooseProtectTwo(){
 	if(person.name == "Alien"){
 		document.getElementById("protect2").innerHTML = "You scrunch up your face and focus all of your brain power on creating a force-field. Aha! You’ve done it…the force field appears around you. You’ve got to use all of your focus and strength for the entire walk around the assassin as he beats on the force field. This tires you out – lose 20 health points. You've earned 5 bricks of gold.";
@@ -319,9 +298,7 @@ function chooseProtectTwo(){
 	document.getElementById("secondChallenge").style.display = "none";
 	document.getElementById("goldUpdate2").innerHTML = "Total Gold Earned : " + person.getGold();
 	document.getElementById("healthUpdate2").innerHTML = "Total Health points : " + person.getHealth();
-
 }
-
 function chooseProtectThree(){
 	if(person.name == "Alien"){
 		document.getElementById("protect3").innerHTML = "You scrunch up your face and focus all of your brain power on creating a force-field. Aha! You’ve done it…the force field appears around you. You’ve got to use all of your focus and strength for the entire escape from the quicksand. This tires you out – lose 20 health points. You've earned 5 bricks of gold.";
@@ -343,35 +320,24 @@ function chooseProtectThree(){
 	document.getElementById("thirdChallenge").style.display = "none";
 	displayFinalScore();
 }
-
-
 function displayFirstChallenge(){
 	document.getElementById("firstChallenge").style.display = "block";
 	document.getElementById("opening").style.display = "none";
 }
-
 function displaySecondChallenge(){
-
 	 document.getElementById("secondChallenge").style.display = "block";
 	 document.getElementById("firstUpdate").style.display = "none";
 }
-
-
 function displayThirdChallenge(){
 	if (checkIfAlive() == false){
 		document.getElementById("secondUpdate").style.display = "none";
 		document.getElementById("gameOverMessage1").innerHTML = "Oh No!!! You're too injured to save Javascropolis! Game Over";
 		}
-
 	else {
 	 document.getElementById("thirdChallenge").style.display = "block";
 	 document.getElementById("secondUpdate").style.display = "none";
 }
 }
-
-
-
-
 function displayFinalScore(){
 	document.getElementById("thirdChallenge").style.display = "none";
 	document.getElementById("finalScore").style.display = "block";
@@ -388,8 +354,4 @@ else {
 	document.getElementById("goldMessage").innerHTML = "Too bad, you needed 15 bricks of gold to satisfy the evil overlords. You ended with " + person.getGold() + "bricks";
 }
 }
-
-
-
-
 initiate();
